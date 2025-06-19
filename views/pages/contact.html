@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liên hệ</title>
+    <!-- Link Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Link Font Awesome (cho icons) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <!-- Link CSS tùy chỉnh -->
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+
+    <link rel="stylesheet" href="../../assets/css/base.css" />
+  </head>
+
+  <body>
+    <!-- === HEADER & NAVIGATION === -->
+    <!-- header -->
+    <div id="header"></div>
+    <script>
+      fetch("../layout/header.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("header").innerHTML = data;
+        });
+    </script>
+    <!-- end header -->
+
+    <!-- === MAIN CONTENT === -->
+    <div class="main mt-1">
+      <main class="container mb-4">
+        <h1 class="mb-4 text-center">Liên hệ với chúng tôi</h1>
+
+        <div class="row">
+          <div class="col-md-6">
+            <h5>Thông tin liên hệ</h5>
+            <p>
+              <strong>Địa chỉ:</strong>140 Lê Trọng Tấn, Phường Tây Thạnh, Quận
+              Tân Phú, TP.HCM<br />
+              <strong>Điện thoại:</strong> (012) 345-6789<br />
+              <strong>Email:</strong> info@nototoshop.com<br />
+              <strong>Giờ làm việc:</strong> Thứ 2 - Thứ 7: 9:00 AM - 6:00 PM
+            </p>
+
+            <h5 class="mt-4">Theo dõi chúng tôi</h5>
+            <div>
+              <a href="#" class="me-2"
+                ><i class="fab fa-facebook-f fa-2x"></i
+              ></a>
+              <a href="#" class="me-2"><i class="fab fa-twitter fa-2x"></i></a>
+              <a href="#" class="me-2"
+                ><i class="fab fa-instagram fa-2x"></i
+              ></a>
+            </div>
+
+            <h5 class="mt-4">Bản đồ</h5>
+
+            <div
+              class="embed-responsive embed-responsive-16by9"
+              style="height: 300px"
+            >
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.067347872699!2d106.626090675918!3d10.806153889344467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752be27d8b4f4d%3A0x92dcba2950430867!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBUaMawxqFuZyBUUC4gSOG7kyBDaMOtIE1pbmggKEhVSVQp!5e0!3m2!1svi!2s!4v1747184293374!5m2!1svi!2s"
+                width="100%"
+                height="300"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <h5>Gửi tin nhắn cho chúng tôi</h5>
+            <form id="contact-form">
+              <div class="mb-3">
+                <label for="contact-name" class="form-label">Họ và tên</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="contact-name"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="contact-email" class="form-label">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="contact-email"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="contact-subject" class="form-label">Tiêu đề</label>
+                <input type="text" class="form-control" id="contact-subject" />
+              </div>
+              <div class="mb-3">
+                <label for="contact-message" class="form-label">Nội dung</label>
+                <textarea
+                  class="form-control"
+                  id="contact-message"
+                  rows="4"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Gửi tin nhắn
+              </button>
+            </form>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- === FOOTER === -->
+    <!-- header -->
+    <div id="footer"></div>
+    <script>
+      fetch("../layout/footer.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("footer").innerHTML = data;
+        });
+    </script>
+    <!-- end header -->
+
+    <!-- Link Bootstrap JS bundle (gồm Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Link JavaScript tùy chỉnh -->
+    <script src="../assets/js/data.js"></script>
+    <!-- Link dữ liệu mẫu -->
+    <script src="../assets/js/script.js"></script>
+  </body>
+</html>

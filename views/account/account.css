@@ -1,0 +1,124 @@
+/* login */
+body {
+  background-image: url("../../assets/img/bg.jpg");
+
+  background-size: auto 200%; /* hoặc 200% 100% nếu muốn hiệu ứng chuyển động mượt hơn */
+  animation: gradientBG 15s linear infinite;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.inner-body {
+  position: relative;
+  width: 380px;
+  padding: 40px;
+  border-radius: 20px;
+  background: rgb(255, 255, 255, 0.5);
+  border: 1px solid #da816b;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  z-index: 10;
+  overflow: hidden;
+}
+.inner-body h1 {
+  text-align: center;
+  color: white;
+  text-shadow: #fc0 1px 0 10px;
+}
+.inner-group {
+  position: relative;
+  margin-bottom: 30px;
+}
+.inner-group input {
+  width: 100%;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  transition: all 0.3s ease;
+
+  box-sizing: border-box;
+}
+
+.inner-group input:focus {
+  background-color: rgba(255, 255, 255, 0.3);
+
+  border: none;
+  outline: none;
+}
+
+.inner-body label {
+  position: absolute;
+  font-weight: 600;
+  top: 0;
+  transform: translateY(-50%);
+  left: 20px;
+  font-size: 20px;
+  pointer-events: none;
+  color: rgb(197, 22, 22);
+  transition: all 0.3s ease;
+}
+.inner-remember {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.inner-login {
+  width: 100%;
+  padding: 15px;
+  border-radius: 20px;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+.inner-login:hover {
+  background-color: rgb(194, 161, 43);
+  transform: translateY(-3px);
+}
+.inner-register {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  margin-top: 20px;
+}
+.inner-register a {
+  font-weight: 600;
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  margin-left: 8px;
+  display: inline-block;
+}
+.inner-register a:hover {
+  transform: scale(1.1) translateY(-3px);
+  transition: all 0.3s ease;
+}
+
+/* end login */
+.desc {
+  font-size: 15px;
+  margin-bottom: 20px;
+  color: red;
+}
+.come-back {
+  position: sticky;
+  top: 0;
+}

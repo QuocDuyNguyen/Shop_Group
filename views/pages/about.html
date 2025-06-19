@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giới thiệu</title>
+    <!-- Link Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Link Font Awesome (cho icons) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <!-- Link CSS tùy chỉnh -->
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+
+    <link rel="stylesheet" href="../../assets/css/base.css" />
+  </head>
+
+  <body>
+    <!-- header -->
+    <div id="header"></div>
+    <script>
+      fetch("../layout/header.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("header").innerHTML = data;
+        });
+    </script>
+    <!-- end header -->
+    <!-- === MAIN CONTENT === -->
+    <div class="main mt-1">
+      <main class="container mb-5">
+        <h1 class="mb-4 text-center text-danger">SHOP GROUP</h1>
+
+        <div class="row">
+          <div class="col-md-8 offset-md-2">
+            <p class="fs-5">
+              Chào mừng bạn đến với <strong>SHOP GROUP</strong> -- nơi thời
+              trang gặp gỡ cá tính! Chúng tôi là một nhóm sinh viên đam mê sáng
+              tạo, mang đến cho bạn những sản phẩm quần áo hợp xu hướng, chất
+              lượng tốt và phù hợp với phong cách riêng của từng người.
+            </p>
+            <p class="fs-5">
+              Shop GROUP được thành lập với mục tiêu tạo ra một không gian mua
+              sắm hiện đại, dễ sử dụng, giúp khách hàng dễ dàng tìm thấy những
+              bộ trang phục phù hợp cho đi học, đi làm, hay đi chơi.
+            </p>
+          </div>
+        </div>
+
+        <!-- Tầm nhìn và Sứ mệnh -->
+        <section class="my-5">
+          <h2 class="text-center text-primary mb-4">Tầm nhìn & Sứ mệnh</h2>
+          <div class="row">
+            <div class="col-md-6">
+              <h4 class="fw-bold">🎯 Tầm nhìn</h4>
+              <p>
+                Trở thành thương hiệu thời trang sinh viên được yêu thích nhất
+                trên nền tảng online, nơi mọi người có thể tự do thể hiện cá
+                tính qua trang phục.
+              </p>
+            </div>
+            <div class="col-md-6">
+              <h4 class="fw-bold">🤝 Sứ mệnh</h4>
+              <p>
+                Cung cấp sản phẩm thời trang chất lượng, hợp xu hướng với giá cả
+                hợp lý, đồng thời không ngừng cải tiến trải nghiệm mua sắm cho
+                người dùng.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Đội ngũ -->
+        <section class="my-5 text-center">
+          <h2 class="text-primary mb-4">Gặp gỡ nhóm phát triển</h2>
+          <div class="row justify-content-center">
+            <div class="col-6 col-sm-4 col-md-3 mb-4">
+              <img
+                src="../../assets/img/logo.png"
+                class="team-img mb-2"
+                alt="Trương Tấn Kiên"
+              />
+              <h5 class="fw-bold">Trương Tấn Kiên</h5>
+              <p class="text-muted">Back-End</p>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 mb-4">
+              <img
+                src="../../assets/img/logo.png"
+                class="team-img mb-2"
+                alt="Nguyễn Quốc Duy"
+              />
+              <h5 class="fw-bold">Nguyễn Quốc Duy</h5>
+              <p class="text-muted">Front-End</p>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 mb-4">
+              <img
+                src="../../assets/img/logo.png"
+                class="team-img mb-2"
+                alt="Nguyễn Duy Lợi"
+              />
+              <h5 class="fw-bold">Đặng Duy Lợi</h5>
+              <p class="text-muted">Front-End</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Mốc phát triển -->
+        <section class="my-5">
+          <h2 class="text-primary text-center mb-4">Cột mốc đáng nhớ</h2>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">🎉 2025: Thành lập SHOP GROUP</li>
+            <li class="list-group-item">
+              🚀 Ra mắt phiên bản website đầu tiên
+            </li>
+            <li class="list-group-item">
+              👕 Đạt 500+ lượt mua thử nghiệm từ bạn bè
+            </li>
+          </ul>
+        </section>
+
+        <!-- Cam kết / lời nhắn -->
+        <section class="my-5 text-center">
+          <blockquote class="blockquote">
+            <p class="mb-0 fs-5 fw-bold">
+              "Chúng mình tin rằng thời trang là một cách để bạn thể hiện chính
+              mình. Hãy để SHOP GROUP đồng hành cùng bạn trên hành trình đó!"
+            </p>
+          </blockquote>
+        </section>
+      </main>
+    </div>
+
+    <!-- header -->
+    <div id="footer"></div>
+    <script>
+      fetch("../layout/footer.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("footer").innerHTML = data;
+        });
+    </script>
+    <!-- end header -->
+
+    <!-- Link Bootstrap JS bundle (gồm Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Link JavaScript tùy chỉnh -->
+    <script src="../assets/js/data.js"></script>
+    <!-- Link dữ liệu mẫu -->
+    <script src="../assets/js/script.js"></script>
+  </body>
+</html>

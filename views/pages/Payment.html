@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thanh toán</title>
+    <!-- Link Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Link Font Awesome (cho icons) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <!-- Link CSS tùy chỉnh -->
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+
+    <link rel="stylesheet" href="../../assets/css/base.css" />
+  </head>
+
+  <body>
+    <div id="header"></div>
+    <script>
+      fetch("../layout/header.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("header").innerHTML = data;
+        });
+    </script>
+    <!-- === MAIN CONTENT === -->
+    <div class="main mt-2">
+      <main class="container mt-4 mb-4">
+        <h1 class="mb-4 text-center">Thanh toán</h1>
+
+        <div class="row">
+          <!-- Cột Thông tin Giao hàng -->
+          <div class="col-md-7">
+            <h5>Thông tin giao hàng</h5>
+            <form id="checkout-form">
+              <div class="mb-3">
+                <label for="full-name" class="form-label">Họ và tên</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="full-name"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="phone-number" class="form-label"
+                  >Số điện thoại</label
+                >
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="phone-number"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" />
+              </div>
+              <div class="mb-3">
+                <label for="address" class="form-label">Địa chỉ chi tiết</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="address"
+                  placeholder="Số nhà, tên đường..."
+                  required
+                />
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="city" class="form-label">Tỉnh/Thành phố</label>
+                  <input type="text" class="form-control" id="city" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="district" class="form-label">Quận/Huyện</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="district"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="notes" class="form-label"
+                  >Ghi chú đơn hàng (Tùy chọn)</label
+                >
+                <textarea class="form-control" id="notes" rows="3"></textarea>
+              </div>
+
+              <h5 class="mt-4">Hình thức thanh toán</h5>
+              <div class="mb-3">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="paymentMethod"
+                    id="cod"
+                    value="cod"
+                    checked
+                  />
+                  <label class="form-check-label" for="cod">
+                    Thanh toán khi nhận hàng (COD)
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="paymentMethod"
+                    id="bank-transfer"
+                    value="bank"
+                  />
+                  <label class="form-check-label" for="bank-transfer">
+                    Chuyển khoản ngân hàng
+                  </label>
+                </div>
+                <!-- Có thể thêm các hình thức khác -->
+              </div>
+            </form>
+            <!-- Form kết thúc ở đây để nút submit nằm ngoài -->
+          </div>
+
+          <!-- Cột Tóm tắt Đơn hàng -->
+          <div class="col-md-5">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Tóm tắt đơn hàng</h5>
+                <div id="order-summary-items">
+                  <div class="d-flex justify-content-between mb-2">
+                    <span>Áo Thun Đẹp (x1)</span>
+                    <span>500.000 VNĐ</span>
+                  </div>
+                </div>
+                <hr />
+                <div class="d-flex justify-content-between font-weight-bold">
+                  <span>Tổng cộng:</span>
+                  <span id="checkout-grand-total">300,000 VNĐ</span>
+                </div>
+                <!-- Có thể thêm phí ship, mã giảm giá... -->
+
+                <button
+                  type="submit"
+                  form="checkout-form"
+                  class="btn btn-primary w-100 mt-4"
+                >
+                  Đặt hàng
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Khu vực Hóa đơn (sẽ hiển thị sau khi đặt hàng thành công bằng JS) -->
+        <div id="invoice-area" class="mt-5" style="display: none">
+          <div class="card">
+            <div class="card-header">
+              <h4 class="mb-0">Chi tiết hóa đơn</h4>
+            </div>
+            <div class="card-body" id="invoice-details">
+              <!-- Nội dung hóa đơn sẽ được load bằng JS -->
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- === FOOTER === -->
+    <div id="footer"></div>
+    <script>
+      fetch("../layout/footer.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("footer").innerHTML = data;
+        });
+    </script>
+    <!-- Link Bootstrap JS bundle (gồm Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Link JavaScript tùy chỉnh -->
+    <script src="../assets/js/data.js"></script>
+    <!-- Link dữ liệu mẫu -->
+    <script src="../assets/js/script.js"></script>
+  </body>
+</html>

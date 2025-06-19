@@ -1,0 +1,492 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+body {
+  font-family: "Roboto", sans-serif;
+}
+/* header */
+
+.header {
+  width: 100%;
+  background-color: rgba(233, 230, 226, 0.959);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+}
+.header .inner-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header .inner-wrap .inner-logo {
+  font-size: 50px;
+  text-shadow: 1px 1px 2px red;
+}
+.header .inner-wrap .inner-menu ul {
+  display: flex;
+  margin-left: 100px;
+  margin-right: 50px;
+}
+.header .inner-wrap .inner-menu ul li {
+  /* margin-right: 30px; */
+  border-right: 1px solid #000;
+  padding: 5px 20px;
+}
+.header .inner-wrap .inner-menu ul li a {
+  color: red;
+  font-size: 20px;
+}
+.header .inner-wrap .inner-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header .inner-search {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+.header .inner-search i {
+  padding: 15px;
+}
+.header .search {
+  position: absolute;
+  left: -50px;
+  background: white;
+  padding: 10px;
+  border-radius: 7px;
+  gap: 3px;
+  display: none;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+  z-index: 100;
+}
+
+.header .inner-search:hover .search {
+  display: flex;
+}
+
+.header .search input {
+  padding: 5px;
+  width: 150px;
+}
+
+.header .search button {
+  padding: 5px;
+}
+
+.header .inner-user {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 3px;
+  cursor: pointer;
+}
+
+/* Dropdown ẩn đi ban đầu */
+.header .account {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: -2px;
+  background: white;
+  padding: 10px;
+  border-radius: 7px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+  z-index: 10;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.header .inner-user:hover .account {
+  display: flex;
+}
+
+.header .inner-wrap .inner-right .inner-user img {
+  width: 35px;
+  height: auto;
+  margin-right: 10px;
+}
+.header .inner-cart {
+  position: relative;
+  cursor: pointer;
+}
+.header .inner-cart i {
+  color: gold;
+  position: relative;
+}
+.header .inner-cart .number {
+  position: absolute;
+  top: 1px;
+  right: 4px;
+  font-size: 10px;
+  color: #000;
+  font-weight: 600;
+  z-index: 10;
+}
+
+.inner-menu li {
+  animation-duration: 1.4s;
+  animation-fill-mode: both;
+}
+.inner-menu li:nth-child(1) {
+  animation-delay: 0s;
+}
+.inner-menu li:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.inner-menu li:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.inner-menu li:nth-child(4) {
+  animation-delay: 0.6s;
+}
+/* end header */
+
+/* main */
+.main {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 80px 60px;
+  margin: 20px 0;
+}
+.main .inner-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main .inner-outstanding {
+  margin: 30px 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.main .inner-outstanding .inner-title-big {
+  padding: 10px;
+  font-size: 25px;
+  font-weight: 600;
+  color: #c03d0d;
+  text-shadow: 1px 1px 2px pink;
+}
+.main .inner-outstanding .inner-box {
+  width: 24%;
+  position: relative;
+  margin-bottom: 10px;
+}
+.main .inner-outstanding .inner-box .inner-img {
+  height: 70%;
+}
+
+.main .inner-outstanding .inner-box .inner-img img {
+  width: 100%;
+}
+.main .inner-outstanding .inner-box .inner-detail {
+  background-color: rgb(240, 240, 240);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  min-height: 100px;
+  position: relative;
+}
+
+.main .inner-outstanding .inner-box .inner-title {
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.main .inner-outstanding .inner-box .inner-price {
+  color: red;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.main .inner-outstanding .inner-box .inner-new {
+  position: absolute;
+  bottom: 353px;
+  right: 0;
+  background-color: red;
+  color: #eeff00;
+  padding: 5px 10px;
+  border-radius: 40%;
+}
+.main .inner-contact {
+  margin: 40px 0 0;
+  padding: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  position: relative;
+  background-image: url(../img/capture\(7\).png);
+  background-size: cover;
+}
+.main .inner-contact .inner-register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.main .inner-contact .form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.main .inner-contact .inner-title {
+  font-weight: 600;
+  color: yellow;
+  font-size: 40px;
+}
+.main .inner-contact .form input {
+  width: 40%;
+  height: 30px;
+  margin: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.main .inner-contact .inner-desc {
+  font-size: 20px;
+  color: white;
+}
+.main .inner-contact button {
+  color: white;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 5px;
+  font-weight: 600;
+  background-color: #ff4500;
+  margin: 20px 0;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+@keyframes shake {
+  0% {
+    transform: scale(1.1) translateX(0);
+  }
+  25% {
+    transform: scale(1.1) translateX(-2px);
+  }
+  50% {
+    transform: scale(1.1) translateX(2px);
+  }
+  75% {
+    transform: scale(1.1) translateX(-2px);
+  }
+  100% {
+    transform: scale(1.1) translateX(0);
+  }
+}
+.main .inner-contact button:hover {
+  animation: shake 0.4s;
+}
+/* end main */
+
+/* footer */
+.inner-footer {
+  background-color: #000;
+  padding: 20px;
+  margin-top: 20px;
+}
+.inner-footer .inner-title {
+  font-size: 20px;
+  color: white;
+  font-weight: 700;
+  margin-left: 150px;
+  margin-bottom: 5px;
+}
+.inner-footer .inner-wrap {
+  display: flex;
+  justify-content: space-around;
+}
+.inner-footer .inner-wrap .inner-box {
+  color: white;
+}
+.inner-footer .inner-icon i {
+  padding: 5px;
+  margin-right: 10px;
+  font-size: 30px;
+  background-color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+/* end footer */
+.inner-mes {
+  position: fixed;
+  right: 10px;
+  bottom: 120px;
+}
+.inner-mes i {
+  color: white;
+  padding: 10px;
+  font-size: 25px;
+  background-color: rgb(47, 47, 238);
+  border-radius: 50%;
+}
+.main .inner-outstanding .inner-box {
+  animation-duration: 1.4s;
+  animation-fill-mode: both;
+}
+.main .inner-outstanding .inner-box:nth-child(1) {
+  animation-delay: 0s;
+}
+.main .inner-outstanding .inner-box:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.main .inner-outstanding .inner-box:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.main .inner-outstanding .inner-box:nth-child(4) {
+  animation-delay: 0.6s;
+}
+/* product */
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
+  display: block;
+}
+/* Bọc hình ảnh để xử lý vị trí lớp phủ */
+.product-img-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Lớp phủ hiển thị khi hover */
+.product-item .inner-letter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  opacity: 0;
+  z-index: 2;
+  pointer-events: none;
+  transform: translateX(-100%);
+  transition: none;
+}
+
+/* Khi hover thì trượt vào */
+.product-item:hover .inner-letter {
+  animation: slideInFromLeft 0.5s ease forwards;
+  pointer-events: auto;
+}
+
+/* Nút bên trong lớp overlay */
+.product-item .inner-letter a {
+  pointer-events: auto;
+  padding: 6px 10px;
+  border: 1px solid #fff;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 15px;
+  color: #fff;
+  background-color: transparent;
+  transition: 0.3s;
+}
+
+.product-item .inner-letter a:hover {
+  color: #000;
+  background-color: #fff;
+}
+
+/* Animation */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+/* trang chi tiết */
+.product-image img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-info h2 {
+  font-size: 2rem;
+}
+
+.product-description {
+  line-height: 1.8;
+  font-size: 1rem;
+  color: #333;
+  max-height: 250px;
+  overflow-y: auto;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+}
+
+.btn-success:hover {
+  background-color: #28a745cc;
+}
+/* swipper */
+.ad-swiper {
+  position: relative;
+  max-width: 1000px;
+  aspect-ratio: 3 / 1;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.ad-swiper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+/* Điều chỉnh nút điều hướng Swiper */
+.ad-swiper .swiper-button-next,
+.ad-swiper .swiper-button-prev {
+  top: 50%; /* Canh giữa theo chiều cao ảnh */
+  transform: translateY(-50%);
+  color: #fff; /* hoặc màu khác nếu nền sáng */
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+}
+
+.ad-swiper .swiper-button-next {
+  right: 10px; /* Gần bên phải hình hơn */
+}
+
+.ad-swiper .swiper-button-prev {
+  left: 10px; /* Gần bên trái hình hơn */
+}
+
+/* about */
+.team-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}

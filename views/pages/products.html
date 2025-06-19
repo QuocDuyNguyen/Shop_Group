@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sản phẩm</title>
+    <!-- Link Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Link Font Awesome (cho icons) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <!-- Link CSS tùy chỉnh -->
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+
+    <link rel="stylesheet" href="../../assets/css/base.css" />
+  </head>
+
+  <body>
+    <!-- header -->
+
+    <div id="header"></div>
+    <script>
+      fetch("../layout/header.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("header").innerHTML = data;
+        });
+    </script>
+
+    <!-- end header -->
+
+    <!-- === MAIN CONTENT === -->
+    <div class="main mt-1">
+      <main class="container mb-4">
+        <h1 class="mb-1 text-center">Tất cả sản phẩm</h1>
+
+        <div class="row mb-3">
+          <!-- Sidebar Lọc/Tìm kiếm -->
+          <div class="col-md-6 d-flex align-items-center">
+            <label for="sort-price" class="me-2 mb-0">Sắp xếp theo giá:</label>
+            <select id="sort-price" class="form-select w-auto">
+              <option value="default">Mặc định</option>
+              <option value="asc">Giá tăng dần</option>
+              <option value="desc">Giá giảm dần</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <div class="row d-flex align-items-center">
+              <div class="col-4">
+                <label for="product-count" class="form-label"
+                  >Sản phẩm hiển thị:</label
+                >
+              </div>
+              <div class="col-4">
+                <input
+                  type="number"
+                  id="product-count"
+                  class="form-control"
+                  value="8"
+                  min="1"
+                  max="100"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <!-- Danh sách Sản phẩm -->
+          <div class="col-md-12">
+            <div class="row" id="inner-all-product">
+              <!-- Sản phẩm sẽ được load bằng JS -->
+            </div>
+
+            <!-- Nút điều khiển -->
+            <div class="text-center mt-3">
+              <button id="load-more" class="btn btn-outline-primary">
+                Xem thêm
+              </button>
+              <button id="collapse" class="btn btn-outline-secondary d-none">
+                Ẩn bớt
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- === FOOTER === -->
+    <!-- header -->
+    <div id="footer"></div>
+    <script>
+      fetch("../layout/footer.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("footer").innerHTML = data;
+        });
+    </script>
+    <!-- end header -->
+
+    <!-- Link Bootstrap JS bundle (gồm Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Link JavaScript tùy chỉnh -->
+    <script src="../../assets/js/data.js"></script>
+  </body>
+</html>
